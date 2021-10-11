@@ -1,43 +1,53 @@
 import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TouchableHighlight, Image } from 'react-native';
 
+
 var { width, height } = Dimensions.get('window');
 
 function MainScreen({ items }) {
     return (
         <View style={styles.main}>
-            <View style={styles.submain}>
+            <View style={styles.title}>
                 <Text style={styles.titleText}>
                     Forsen Soundboard
                 </Text>
             </View>
             <View style={styles.submain}>
-                <TouchableHighlight onPress={() => console.log('Forsen')}>
-                    <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/Pepepains.png')} />
-                        <Text style={styles.buttonText}>Forsen</Text>
-                    </View>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => console.log('Uganda')}>
-                    <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/LULE.png')} />
-                        <Text style={styles.buttonText}>Donations</Text>
-                    </View>
-                </TouchableHighlight>
+                <View style={styles.submain2}>
+                    <TouchableHighlight onPress={() => console.log('Forsen')}>
+                        <View style={styles.button}>
+                            <Image style={styles.image} source={require('../../assets/images/Pepepains.png')} />
+                            <Text style={styles.buttonText}>Forsen</Text>
+                            <Text style={styles.buttonText}>Lines</Text>
+                        </View>
+                    </TouchableHighlight>
+                </View>
+                <View style={styles.submain2}>
+                    <TouchableHighlight onPress={() => console.log('Uganda')}>
+                        <View style={styles.button}>
+                            <Image style={styles.image} source={require('../../assets/images/LULE.png')} />
+                            <Text style={styles.buttonText}>Donations</Text>
+                        </View>
+                    </TouchableHighlight>
+                </View>
             </View>
             <View style={styles.submain}>
-                <TouchableHighlight onPress={() => console.log('FORSEN')}>
-                    <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
-                        <Text style={styles.buttonText}>Uganda</Text>
-                    </View>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => console.log('FORSEN')}>
-                    <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/gachiGASM.png')} />
-                        <Text style={styles.buttonText}>Gachi</Text>
-                    </View>
-                </TouchableHighlight>
+                <View style={styles.submain2}>
+                    <TouchableHighlight onPress={() => console.log('FORSEN')}>
+                        <View style={styles.button}>
+                            <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
+                            <Text style={styles.buttonText}>Uganda</Text>
+                        </View>
+                    </TouchableHighlight>
+                </View>
+                <View style={styles.submain2}>
+                    <TouchableHighlight onPress={() => console.log('FORSEN')}>
+                        <View style={styles.button}>
+                            <Image style={styles.image} source={require('../../assets/images/gachiGASM.png')} />
+                            <Text style={styles.buttonText}>Gachi</Text>
+                        </View>
+                    </TouchableHighlight>
+                </View>
             </View>
         </View>
     );
@@ -45,14 +55,20 @@ function MainScreen({ items }) {
 
 const styles = StyleSheet.create({
     button: {
-        padding: 50,
+        width: 85,
+        height: 115,
         alignItems: 'center',
+        paddingTop: 10,
     },
     image: {
+      
         height: 66,
         width: 66,
     },
     buttonText: {
+        fontFamily: 'Helvetica',
+        fontSize: 14,
+        marginBottom: -5,
         color: 'white',
         paddingTop: 5,
         textTransform: 'uppercase',
@@ -64,21 +80,34 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    title: {
+        paddingTop: 80,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+ 
+    },
     titleText: {
+        fontFamily: 'Helvetica',
         fontSize: 40,
         color: 'white',
         paddingBottom: 50,
         textAlign: 'center',
     },
     submain: {
+       
+        paddingTop: 40,
+        marginHorizontal: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 0.2,
         flexDirection: 'row',
-        paddingBottom: 100,
+ 
+    },
+    submain2: {
+       paddingHorizontal: 20,
     },
     main: {
-        flex: 1,
+        
         justifyContent: 'center',
         alignContent: 'center',
     }
