@@ -14,28 +14,28 @@ function MainScreen({ items }) {
             <View style={styles.submain}>
                 <TouchableHighlight onPress={() => console.log('Forsen')}>
                     <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/forsenE.png')} />
+                        <Image style={styles.image} source={require('../../assets/images/Pepepains.png')} />
                         <Text style={styles.buttonText}>Forsen</Text>
                     </View>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => console.log('Uganda')}>
                     <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
-                        <Text style={styles.buttonText}>Uganda</Text>
+                        <Image style={styles.image} source={require('../../assets/images/LULE.png')} />
+                        <Text style={styles.buttonText}>Donations</Text>
                     </View>
                 </TouchableHighlight>
             </View>
             <View style={styles.submain}>
                 <TouchableHighlight onPress={() => console.log('FORSEN')}>
                     <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/forsenE.png')} />
-                        <Text style={styles.buttonText}>FORSEN</Text>
+                        <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
+                        <Text style={styles.buttonText}>Uganda</Text>
                     </View>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => console.log('FORSEN')}>
                     <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/forsenE.png')} />
-                        <Text style={styles.buttonText}>FORSEN</Text>
+                        <Image style={styles.image} source={require('../../assets/images/gachiGASM.png')} />
+                        <Text style={styles.buttonText}>Gachi</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
+        paddingTop: 5,
+        textTransform: 'uppercase',
+        fontWeight: 'bold',
     },
     titleContainer: {
         paddingTop: 0,
