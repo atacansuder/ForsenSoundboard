@@ -3,7 +3,7 @@ import { Dimensions, StyleSheet, View, Text, TouchableHighlight, Image } from 'r
 
 var { width, height } = Dimensions.get('window');
 
-function MainScreen(props) {
+function MainScreen({ items }) {
     return (
         <View style={styles.main}>
             <View style={styles.submain}>
@@ -12,16 +12,16 @@ function MainScreen(props) {
                 </Text>
             </View>
             <View style={styles.submain}>
-                <TouchableHighlight onPress={() => console.log('FORSEN')}>
+                <TouchableHighlight onPress={() => console.log('Forsen')}>
                     <View style={styles.button}>
                         <Image style={styles.image} source={require('../../assets/images/forsenE.png')} />
-                        <Text style={styles.buttonText}>FORSEN</Text>
+                        <Text style={styles.buttonText}>Forsen</Text>
                     </View>
                 </TouchableHighlight>
-                <TouchableHighlight onPress={() => console.log('FORSEN')}>
+                <TouchableHighlight onPress={() => console.log('Uganda')}>
                     <View style={styles.button}>
-                        <Image style={styles.image} source={require('../../assets/images/forsenE.png')} />
-                        <Text style={styles.buttonText}>FORSEN</Text>
+                        <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
+                        <Text style={styles.buttonText}>Uganda</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -46,6 +46,7 @@ function MainScreen(props) {
 const styles = StyleSheet.create({
     button: {
         padding: 50,
+        alignItems: 'center',
     },
     image: {
         height: 66,
