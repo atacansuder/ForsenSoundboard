@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TouchableHighlight, Image } from 'react-native';
 
-
 var { width, height } = Dimensions.get('window');
 
 function MainScreen({ items }) {
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
     },
     image: {
-      
+
         height: 66,
         width: 66,
     },
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
- 
+
     },
     titleText: {
         fontFamily: 'Helvetica',
@@ -95,19 +94,19 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     submain: {
-       
+
         paddingTop: 40,
         marginHorizontal: 50,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
- 
+
     },
     submain2: {
-       paddingHorizontal: 20,
+        paddingHorizontal: 20,
     },
     main: {
-        
+
         justifyContent: 'center',
         alignContent: 'center',
     }
