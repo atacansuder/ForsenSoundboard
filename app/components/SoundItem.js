@@ -5,16 +5,24 @@ import { Audio } from 'expo-av';
 
 function SoundItem(props) {
     const [sound, setSound] = React.useState();
+    const [playing, setPlaying] = React.useState(false);
 
     async function playSound() {
-        console.log('Loading Sound');
-        const { sound } = await Audio.Sound.createAsync(
-            require('../../assets/sounds/H.wav')
-        );
-        setSound(sound);
+        if (!playing) {
+            console.log('Loading Sound');
+            const { sound } = await Audio.Sound.createAsync(
+                require('../../assets/sounds/H.wav')
+            );
+            setSound(sound);
 
-        console.log('Playing Sound');
-        await sound.playAsync();
+            console.log('Playing Sound');
+            await sound.playAsync();
+            setPlaying(true);
+        }
+        else {
+            sound.unloadAsync();
+            setPlaying(false);
+        }
     }
 
     React.useEffect(() => {
@@ -32,7 +40,7 @@ function SoundItem(props) {
             playSound();
         }}>
             <View style={styles.container}>
-                <MaterialCommunityIcons name="play" size={50} style={styles.playButton} />
+                <MaterialCommunityIcons name={playing ? "stop" : "play"} size={50} style={styles.playButton} />
                 <Text style={styles.text}>HEHEHEHE OH! OMEGA LYL H</Text>
             </View>
         </TouchableHighlight>
