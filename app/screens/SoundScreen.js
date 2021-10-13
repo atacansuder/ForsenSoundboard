@@ -67,7 +67,7 @@ function SoundScreen({ category }) {
                 </TouchableHighlight>
             </View>
             <FlatList data={filteredSounds}
-                keyExtractor={filteredSounds => filteredSounds.id.toString()}
+                keyExtractor={filteredSounds => filteredSounds.name}
                 renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
             ></FlatList>
         </View>
