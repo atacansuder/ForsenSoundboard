@@ -10,6 +10,7 @@ const sourcesDonation = SourcesDonation;
 function SoundItem({ txt, src }) {
     const [sound, setSound] = React.useState();
     const [playing, setPlaying] = React.useState(false);
+    var iconName = playing ? 'stop' : 'play';
 
     //console.log('Assigned ' + txt + ' from ' + src);
 
@@ -35,7 +36,6 @@ function SoundItem({ txt, src }) {
         return sound
             ? () => {
                 console.log('Unloading Sound');
-                setPlaying(false);
                 sound.unloadAsync();
             }
             : undefined;
@@ -47,7 +47,7 @@ function SoundItem({ txt, src }) {
             playSound();
         }}>
             <View style={soundItemStyles.container}>
-                <MaterialCommunityIcons name={playing ? 'stop' : 'play'} size={50} style={soundItemStyles.playButton} />
+                <MaterialCommunityIcons name='volume-high' size={35} style={soundItemStyles.playButton} />
                 <Text style={soundItemStyles.text}>{txt}</Text>
             </View>
         </TouchableHighlight>
@@ -68,14 +68,16 @@ const styles = StyleSheet.create({
 const soundItemStyles = StyleSheet.create({
     container: {
         borderColor: 'white',
-        borderWidth: 1,
+        borderWidth: 0,
         flexDirection: 'row',
         alignItems: 'center',
+        height: 50,
     },
     playButton: {
-        borderWidth: 1,
+        borderWidth: 0,
         borderColor: 'black',
-        color: 'lightgray'
+        color: 'lightgray',
+        paddingLeft: 5,
     },
     text: {
         color: 'lightgray',
