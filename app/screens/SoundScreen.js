@@ -45,7 +45,7 @@ function SoundItem({ txt, src }) {
             playSound();
         }}>
             <View style={soundItemStyles.container}>
-                <MaterialCommunityIcons name="play" size={50} style={soundItemStyles.playButton} />
+                <MaterialCommunityIcons name={playing ? 'stop' : 'play'} size={50} style={soundItemStyles.playButton} />
                 <Text style={soundItemStyles.text}>{txt}</Text>
             </View>
         </TouchableHighlight>
@@ -79,6 +79,7 @@ const soundItemStyles = StyleSheet.create({
         color: 'lightgray',
         paddingLeft: 10,
         fontSize: 16,
+        fontWeight: 'bold',
     }
 })
 
