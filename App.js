@@ -16,7 +16,7 @@ export default function App() {
     </Screen>
     */
     <Screen>
-      <SoundScreen></SoundScreen>
+      <SoundScreen category="forsen"></SoundScreen>
     </Screen>
   );
 }

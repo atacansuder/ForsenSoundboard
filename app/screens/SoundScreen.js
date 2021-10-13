@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, TouchableHighlight, Text, View } from 'react-native';
+import { StyleSheet, TouchableHighlight, Text, View, FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
 
-import SourcesDonation from '../data/SourcesDonation';
+import sources from '../data/sources';
 
-const sourcesDonation = SourcesDonation;
+const initialSounds = sources;
 
 function SoundItem({ txt, src }) {
     const [sound, setSound] = React.useState();
@@ -18,7 +18,7 @@ function SoundItem({ txt, src }) {
         if (!playing) {
             console.log('Loading Sound');
             const { sound } = await Audio.Sound.createAsync(
-                sourcesDonation[src].source
+                src
             );
             setSound(sound);
 
@@ -54,10 +54,18 @@ function SoundItem({ txt, src }) {
     )
 }
 
-function SoundScreen(props) {
-    console.log(sourcesDonation);
+function SoundScreen({ category }) {
+    const filteredSounds = initialSounds.filter(s => s.category === category);
+
     return (
-        <SoundItem txt={sourcesDonation[0].name} src={0} />
+
+        //<SoundItem txt={sourcesDonation[0].name} src={0} />
+        <FlatList data={filteredSounds}
+            keyExtractor={filteredSounds => filteredSounds.id.toString()}
+            renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
+        >
+
+        </FlatList>
     );
 }
 
