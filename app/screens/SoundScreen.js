@@ -11,13 +11,13 @@ function SoundItem({ txt, src }) {
     const [sound, setSound] = React.useState();
     const [playing, setPlaying] = React.useState(false);
 
-    console.log('Assigned ' + txt + ' from ' + src);
+    //console.log('Assigned ' + txt + ' from ' + src);
 
     async function playSound() {
         if (!playing) {
             console.log('Loading Sound');
             const { sound } = await Audio.Sound.createAsync(
-                require('../../assets/sounds/' + src)
+                sourcesDonation[src].source
             );
             setSound(sound);
 
@@ -35,10 +35,12 @@ function SoundItem({ txt, src }) {
         return sound
             ? () => {
                 console.log('Unloading Sound');
+                setPlaying(false);
                 sound.unloadAsync();
             }
             : undefined;
     }, [sound]);
+
 
     return (
         <TouchableHighlight onPress={() => {
@@ -55,7 +57,7 @@ function SoundItem({ txt, src }) {
 function SoundScreen(props) {
     console.log(sourcesDonation);
     return (
-        <SoundItem txt={sourcesDonation[0].name} src={sourcesDonation[0].source} />
+        <SoundItem txt={sourcesDonation[0].name} src={0} />
     );
 }
 

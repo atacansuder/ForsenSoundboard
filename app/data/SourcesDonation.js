@@ -1,7 +1,7 @@
 const sources = [
     {
         name: 'HEHEHE OH OMEGALYL H',
-        source: 'H.wav',
+        source: require('../../assets/sounds/H.wav'),
     }
 ]
 
