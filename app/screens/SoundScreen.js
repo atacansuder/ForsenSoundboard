@@ -54,8 +54,8 @@ function SoundItem({ txt, src }) {
     )
 }
 
-function SoundScreen({ category }) {
-    const filteredSounds = initialSounds.filter(s => s.category === category);
+function SoundScreen({ route, navigation }) {
+    const filteredSounds = initialSounds.filter(s => s.category === route.params.category);
 
     return (
 

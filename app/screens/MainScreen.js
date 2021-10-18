@@ -1,54 +1,58 @@
 import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TouchableHighlight, Image } from 'react-native';
 
+import Screen from '../components/Screen';
+
 var { width, height } = Dimensions.get('window');
 
-function MainScreen({ items }) {
+function MainScreen({ navigation }) {
     return (
-        <View style={styles.main}>
-            <View style={styles.title}>
-                <Text style={styles.titleText}>
-                    Forsen Soundboard
-                </Text>
+        <Screen>
+            <View style={styles.main}>
+                <View style={styles.title}>
+                    <Text style={styles.titleText}>
+                        Forsen Soundboard
+                    </Text>
+                </View>
+                <View style={styles.submain}>
+                    <View style={styles.submain2}>
+                        <TouchableHighlight onPress={() => navigation.navigate('SoundScreen', { category: 'forsen' })}>
+                            <View style={styles.button}>
+                                <Image style={styles.image} source={require('../../assets/images/Pepepains.png')} />
+                                <Text style={styles.buttonText}>Forsen</Text>
+                                <Text style={styles.buttonText}>Lines</Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                    <View style={styles.submain2}>
+                        <TouchableHighlight onPress={() => console.log('Uganda')}>
+                            <View style={styles.button}>
+                                <Image style={styles.image} source={require('../../assets/images/LULE.png')} />
+                                <Text style={styles.buttonText}>Donations</Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                </View>
+                <View style={styles.submain}>
+                    <View style={styles.submain2}>
+                        <TouchableHighlight onPress={() => console.log('FORSEN')}>
+                            <View style={styles.button}>
+                                <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
+                                <Text style={styles.buttonText}>Uganda</Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                    <View style={styles.submain2}>
+                        <TouchableHighlight onPress={() => console.log('FORSEN')}>
+                            <View style={styles.button}>
+                                <Image style={styles.image} source={require('../../assets/images/gachiGASM.png')} />
+                                <Text style={styles.buttonText}>Gachi</Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                </View>
             </View>
-            <View style={styles.submain}>
-                <View style={styles.submain2}>
-                    <TouchableHighlight onPress={() => console.log('Forsen')}>
-                        <View style={styles.button}>
-                            <Image style={styles.image} source={require('../../assets/images/Pepepains.png')} />
-                            <Text style={styles.buttonText}>Forsen</Text>
-                            <Text style={styles.buttonText}>Lines</Text>
-                        </View>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.submain2}>
-                    <TouchableHighlight onPress={() => console.log('Uganda')}>
-                        <View style={styles.button}>
-                            <Image style={styles.image} source={require('../../assets/images/LULE.png')} />
-                            <Text style={styles.buttonText}>Donations</Text>
-                        </View>
-                    </TouchableHighlight>
-                </View>
-            </View>
-            <View style={styles.submain}>
-                <View style={styles.submain2}>
-                    <TouchableHighlight onPress={() => console.log('FORSEN')}>
-                        <View style={styles.button}>
-                            <Image style={styles.image} source={require('../../assets/images/ZULUL.png')} />
-                            <Text style={styles.buttonText}>Uganda</Text>
-                        </View>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.submain2}>
-                    <TouchableHighlight onPress={() => console.log('FORSEN')}>
-                        <View style={styles.button}>
-                            <Image style={styles.image} source={require('../../assets/images/gachiGASM.png')} />
-                            <Text style={styles.buttonText}>Gachi</Text>
-                        </View>
-                    </TouchableHighlight>
-                </View>
-            </View>
-        </View>
+        </Screen>
     );
 }
 
