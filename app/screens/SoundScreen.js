@@ -70,10 +70,10 @@ function SoundScreen({ route, navigation }) {
         <View>
 
             <FlatList style={{ backgroundColor: '#202124' }} data={filteredSounds}
-                keyExtractor={filteredSounds => filteredSounds.name}
+                keyExtractor={filteredSounds => filteredSounds.id}
                 renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
             ></FlatList>
-        </View>
+        </View >
     );
 }
 

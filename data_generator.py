@@ -7,15 +7,17 @@ subfolder = input("Enter the name of the subfolder: ")
 mypath = './assets/sounds/' + subfolder + '/'
 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-result = "["
-
+result = "const sources = ["
+idCounter = 0
 
 for fileName in onlyfiles:
     req = "require('../../assets/sounds/" + subfolder + "/" + fileName + "')"
     f = fileName[:-4]
     f = f.replace("_", " ")
-    result += "{caregory: '" + subfolder + "', name: '" + f + "', source: " + req + "},"
-    
+    result += "{id: " + str(idCounter) + ", category: '" + subfolder + "', name: '" + f + "', source: " + req + "}, "
+    idCounter += 1
+
+result += "];\n\nexport default sources;"
 
 textFile = open("result.txt","w+")
 textFile.write(result)
