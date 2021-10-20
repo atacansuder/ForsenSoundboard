@@ -16,7 +16,7 @@ function MainScreen({ navigation }) {
                 </View>
                 <View style={styles.submain}>
                     <View style={styles.submain2}>
-                        <TouchableHighlight onPress={() => navigation.navigate('SoundScreen', { category: 'forsen' })}>
+                        <TouchableHighlight onPress={() => navigation.navigate('SoundScreen', { category: 'forsen', title: 'Forsen Lines', style: styles.navigatorStyle })}>
                             <View style={styles.button}>
                                 <Image style={styles.image} source={require('../../assets/images/Pepepains.png')} />
                                 <Text style={styles.buttonText}>Forsen</Text>
@@ -113,6 +113,9 @@ const styles = StyleSheet.create({
 
         justifyContent: 'center',
         alignContent: 'center',
+    },
+    navigatorStyle: {
+        backgroundColor: '#202124',
     }
 })
 

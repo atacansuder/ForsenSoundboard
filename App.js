@@ -20,8 +20,13 @@ export default function App() {
     */
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={MainScreen} options={{ title: '' }} />
-        <Stack.Screen name="SoundScreen" component={SoundScreen} />
+        <Stack.Screen name="Home" component={MainScreen} options={{ title: '', headerStyle: styles.navigatorHeader, headerTintColor: '#202124' }} />
+        <Stack.Screen name="SoundScreen" style={{ backgroundColor: '#202124' }} component={SoundScreen} options={({ route }) => ({
+          title: route.params.title,
+          headerStyle: route.params.style,
+          headerTintColor: 'lightgray',
+          headerTitleAlign: 'center',
+        })} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -34,4 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  navigatorHeader: {
+    backgroundColor: '#202124',
+  }
 });

@@ -60,13 +60,16 @@ function SoundScreen({ route, navigation }) {
     return (
 
         //<SoundItem txt={sourcesDonation[0].name} src={0} />
-        <View>
-            <View style={styles.backButtonDiv}>
+        /*          OLD BACK ARROW
+                    <View style={styles.backButtonDiv}>
                 <TouchableHighlight onPress={() => console.log('back button pressed')}>
                     <MaterialCommunityIcons size={50} color='lightgray' name='arrow-left' />
                 </TouchableHighlight>
             </View>
-            <FlatList data={filteredSounds}
+        */
+        <View>
+
+            <FlatList style={{ backgroundColor: '#202124' }} data={filteredSounds}
                 keyExtractor={filteredSounds => filteredSounds.name}
                 renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
             ></FlatList>
@@ -82,6 +85,7 @@ const styles = StyleSheet.create({
 
 const soundItemStyles = StyleSheet.create({
     container: {
+        backgroundColor: '#202124',
         borderColor: 'white',
         borderWidth: 0,
         flexDirection: 'row',
