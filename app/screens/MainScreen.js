@@ -25,7 +25,7 @@ function MainScreen({ navigation }) {
                         </TouchableHighlight>
                     </View>
                     <View style={styles.submain2}>
-                        <TouchableHighlight onPress={() => console.log('Uganda')}>
+                        <TouchableHighlight onPress={() => navigation.navigate('SoundScreen', { category: 'donation', title: '-10 LULE', style: styles.navigatorStyle })}>
                             <View style={styles.button}>
                                 <Image style={styles.image} source={require('../../assets/images/LULE.png')} />
                                 <Text style={styles.buttonText}>Donations</Text>
