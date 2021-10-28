@@ -2,10 +2,14 @@ import React from 'react';
 import { StyleSheet, TouchableHighlight, Text, View, FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
+import { AdMobBanner, AdMobInterstitial } from 'expo-ads-admob';
 
 import sources from '../data/sources';
 
+// Android banner: ca-app-pub-2808381562562984/6925387539
+
 const initialSounds = sources;
+const bannerAdId = "ca-app-pub-2808381562562984/6925387539";
 
 function SoundItem({ txt, src }) {
     const [sound, setSound] = React.useState();
@@ -68,11 +72,11 @@ function SoundScreen({ route, navigation }) {
             </View>
         */
         <View>
-
             <FlatList style={{ backgroundColor: '#202124' }} data={filteredSounds}
                 keyExtractor={filteredSounds => filteredSounds.id}
                 renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
             ></FlatList>
+            <AdMobBanner bannerSize="smartBannerPortrait" adUnitID={bannerAdId} onDidFailToReceiveAdWithError={this.bannerError} onAdMobDispatchAppEvent={this.adMobEvent} />
         </View >
     );
 }

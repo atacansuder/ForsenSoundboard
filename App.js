@@ -11,6 +11,8 @@ import SoundScreen from './app/screens/SoundScreen';
 
 const Stack = createNativeStackNavigator();
 
+// Android banner: ca-app-pub-2808381562562984/6925387539
+
 export default function App() {
   return (
     /*
