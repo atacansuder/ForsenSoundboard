@@ -72,12 +72,16 @@ function SoundScreen({ route, navigation }) {
             </View>
         */
         <View>
+            <View style = {{alignItems: "center"}}>
+                <AdMobBanner bannerSize="banner" adUnitID={bannerAdId}  />
+            </View> 
             <FlatList style={{ backgroundColor: '#202124' }} data={filteredSounds}
-                keyExtractor={filteredSounds => filteredSounds.id}
+                keyExtractor={filteredSounds => filteredSounds.id.toString()}
                 renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
             ></FlatList>
-            <AdMobBanner bannerSize="smartBannerPortrait" adUnitID={bannerAdId} onDidFailToReceiveAdWithError={this.bannerError} onAdMobDispatchAppEvent={this.adMobEvent} />
         </View >
+        
+        
     );
 }
 

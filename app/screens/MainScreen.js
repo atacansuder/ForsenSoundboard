@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TouchableHighlight, Image } from 'react-native';
+import { AdMobBanner, AdMobInterstitial } from 'expo-ads-admob';
 
 import Screen from '../components/Screen';
 
@@ -33,7 +34,7 @@ function MainScreen({ navigation }) {
                         </TouchableHighlight>
                     </View>
                 </View>
-                <View style={styles.submain}>
+                {/* <View style={styles.submain}>
                     <View style={styles.submain2}>
                         <TouchableHighlight onPress={() => console.log('FORSEN')}>
                             <View style={styles.button}>
@@ -50,7 +51,7 @@ function MainScreen({ navigation }) {
                             </View>
                         </TouchableHighlight>
                     </View>
-                </View>
+                </View> */}
             </View>
         </Screen>
     );
@@ -69,7 +70,6 @@ const styles = StyleSheet.create({
         width: 66,
     },
     buttonText: {
-        fontFamily: 'Helvetica',
         fontSize: 14,
         marginBottom: -5,
         color: 'white',
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
 
     },
     titleText: {
-        fontFamily: 'Helvetica',
         fontSize: 40,
         color: 'white',
         paddingBottom: 50,
