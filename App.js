@@ -8,6 +8,7 @@ import AppButton from './app/components/AppButton';
 import Screen from './app/components/Screen';
 import MainScreen from './app/screens/MainScreen';
 import SoundScreen from './app/screens/SoundScreen';
+import AboutScreen from './app/screens/AboutScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,9 +27,10 @@ export default function App() {
         <Stack.Screen name="SoundScreen" style={{ backgroundColor: '#202124' }} component={SoundScreen} options={({ route }) => ({
           title: route.params.title,
           headerStyle: route.params.style,
-          headerTintColor: 'lightgray',
+          headerTintColor: 'white',
           headerTitleAlign: 'center',
         })} />
+        <Stack.Screen name="About" component={AboutScreen} headerStyle={{ backgroundColor: '#202124' }} options={{ title: 'About', headerTintColor: 'white', headerTitleAlign: 'center', headerStyle: { backgroundColor: '#202124' } }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

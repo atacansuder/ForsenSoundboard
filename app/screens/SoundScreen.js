@@ -72,16 +72,16 @@ function SoundScreen({ route, navigation }) {
             </View>
         */
         <View>
-            <View style = {{alignItems: "center"}}>
-                <AdMobBanner bannerSize="banner" adUnitID={bannerAdId}  />
-            </View> 
-            <FlatList style={{ backgroundColor: '#202124' }} data={filteredSounds}
+            <View style={{ alignItems: "center" }}>
+                <AdMobBanner bannerSize="banner" adUnitID={bannerAdId} />
+            </View>
+            <FlatList contentContainerStyle={{ paddingBottom: 50 }} style={{ backgroundColor: '#202124' }} data={filteredSounds}
                 keyExtractor={filteredSounds => filteredSounds.id.toString()}
                 renderItem={({ item }) => <SoundItem txt={item.name} src={item.source} />}
             ></FlatList>
         </View >
-        
-        
+
+
     );
 }
 
@@ -103,11 +103,11 @@ const soundItemStyles = StyleSheet.create({
     playButton: {
         borderWidth: 0,
         borderColor: 'black',
-        color: 'lightgray',
+        color: 'white',
         paddingLeft: 5,
     },
     text: {
-        color: 'lightgray',
+        color: 'white',
         paddingLeft: 10,
         fontSize: 16,
         fontWeight: 'bold',
