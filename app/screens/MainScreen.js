@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 14,
         marginBottom: -5,
-        color: 'white',
+        color: 'lightgray',
         paddingTop: 5,
         textTransform: 'uppercase',
         fontWeight: 'bold',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 40,
-        color: 'white',
+        color: 'lightgray',
         paddingBottom: 50,
         textAlign: 'center',
     },

@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
 const soundItemStyles = StyleSheet.create({
     container: {
         backgroundColor: '#202124',
-        borderColor: 'white',
+        borderColor: 'lightgray',
         borderWidth: 0,
         flexDirection: 'row',
         alignItems: 'center',
@@ -103,11 +103,11 @@ const soundItemStyles = StyleSheet.create({
     playButton: {
         borderWidth: 0,
         borderColor: 'black',
-        color: 'white',
+        color: 'lightgray',
         paddingLeft: 5,
     },
     text: {
-        color: 'white',
+        color: 'lightgray',
         paddingLeft: 10,
         fontSize: 16,
         fontWeight: 'bold',

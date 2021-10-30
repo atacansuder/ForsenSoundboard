@@ -28,7 +28,8 @@
         "googleMobileAdsAppId": "ca-app-pub-2808381562562984~9771042728"
       },
       "package": "com.kivimasoftware.forsensoundboard",
-      "versionCode": 1
+      "versionCode": 1,
+      "permissions":[]
     },
     "web": {
       "favicon": "./assets/favicon.png"
