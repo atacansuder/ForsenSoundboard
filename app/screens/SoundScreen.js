@@ -6,10 +6,10 @@ import { AdMobBanner, AdMobInterstitial } from 'expo-ads-admob';
 
 import sources from '../data/sources';
 
-// Android banner: ca-app-pub-2808381562562984/6925387539
+
 
 const initialSounds = sources;
-const bannerAdId = "ca-app-pub-2808381562562984/6925387539";
+const bannerAdId = "";
 
 function SoundItem({ txt, src }) {
     const [sound, setSound] = React.useState();
